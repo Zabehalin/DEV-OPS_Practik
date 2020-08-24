@@ -23,7 +23,6 @@ pipeline  {
     stage("install env zone ") {
         steps {
             echo " ============== install env =================="
-            sh '''
             #!/bin/bash
             sudo apt update
             sudo apt -y upgrade
@@ -34,8 +33,7 @@ pipeline  {
             cd /var/lib/jenkins/workspace/DEV-OPS_Practiks
             python3.6 -m venv my_env
             source my_env/bin/activate
-            '''
-            }
+        }
         }
        // stage("docker push") {
       //      steps {
