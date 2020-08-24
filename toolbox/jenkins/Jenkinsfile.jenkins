@@ -25,13 +25,19 @@ pipeline  {
             echo " ============== install env =================="
             sudo apt update
             sudo apt -y upgrade
-            sudo apt install -y python3
+            sudo apt -y install software-properties-common
+            sudo add-apt-repository ppa:deadsnakes/ppa
+            sudo apt -y install python3.7
+            sudo apt update
+            sudo apt -y install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev wget libbz2-dev
+            wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
+            tar -xf Python-3.7.4.tgz
             sudo apt install -y python3-pip
             pip3 install package_name
-            sudo apt install build-essential libssl-dev libffi-dev python3-dev
+            sudo apt -y install build-essential libssl-dev libffi-dev python3-dev
             sudo apt install -y python3-venv
             cd /var/lib/jenkins/workspace/DEV-OPS_Practiks
-            python3 -m venv my_env
+            python3.7 -m venv my_env
             source my_env/bin/activate
         }
         }
