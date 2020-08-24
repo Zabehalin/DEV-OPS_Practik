@@ -7,7 +7,7 @@ def get_data(URL):
     data = responce.json()
     show_currencies(data)
 
-
+#test
 def show_currencies(currency):
     for item in currency:
         print(item["ccy"] + " " + item["base_ccy"] +
